@@ -1,4 +1,4 @@
-function CalculateCompoundGrowth(startCapital, monthlySavings, yearsForCompound, dividends) {
+function CalculateCompoundGrowth(startCapital, monthlySavings, yearsForCompound, expectedGrowth, dividends, doesReinvest) {
     let yearlyGainsList = [];
     let capital = startCapital * dividends + (monthlySavings * 12);
     for (let i = 0; i < yearsForCompound; i++) {
