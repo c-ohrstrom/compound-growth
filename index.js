@@ -3,7 +3,7 @@ let button = document.querySelector("#calculate-compound");
 button.addEventListener("click", () => {
     // let startingCapital = document.querySelector("#starting-capital");
     // let monthlySavings = document.querySelector("#monthly-saving").value;
-    // let dividendRate = document.querySelector("#dividendRate");
+    let dividendRate = document.querySelector("#dividendRate");
     let years = document.querySelector("#years-for-growth").value;
     let result = CalculateCompoundGrowth(100000, 1000, years, 0.07, 0.04, false);
     PrintCompound(result);
@@ -16,9 +16,10 @@ function PrintCompound(result) {
         capital += element.growth + element.dividend;
         let tr = `<tr>
             <td>${element.year}</td>
-            <td>${Math.round(element.growth)}</td>
-            <td>${Math.round(element.dividend)}</td>
-            <td>${Math.round(capital)}</td>
+            <td>${element.growth}</td>
+            <td>${element.dividend}</td>
+            <td>${element.capital}</td>
+            <td>${element.yearlyInvestment}</td>
         </tr>`;
         tableBody += tr;
     });
@@ -27,23 +28,29 @@ function PrintCompound(result) {
     table.innerHTML = tableBody;
 }
 
-function CalculateCompoundGrowth(startCapital, monthlySavings, yearsForCompound, expectedYearlyGrowth, dividends, doesReinvest) {
+function CalculateCompoundGrowth(startCapital, monthlySavings, yearsForCompound, expectedYearlyGrowth, dividends, reinvestDividend) {
     let yearlyGainsList = [];
     let capital = startCapital * dividends + (monthlySavings * 12);
     for (let i = 1; i <= yearsForCompound; i++) {
 
         let dividend = capital * dividends;
-        let yearlySaving = monthlySavings * 12;
-        let thisYearsGrowth = yearlySaving + dividend;
+        let savedYearly = monthlySavings * 12;
+        let thisYearsGrowth = (capital + savedYearly) * expectedYearlyGrowth;
+
         capital += thisYearsGrowth;
+        let capitalWithDividendReinvestment = 0;
+        if (reinvestDividend) {
+            capitalWithDividendReinvestment = capital + dividend;
+            capital += capitalWithDividendReinvestment;
+        }
         let year = {
             year: i,
-            growth: thisYearsGrowth,
-            dividend: dividend
+            capital: Math.round(capital),
+            growth: Math.round(thisYearsGrowth),
+            dividend: Math.round(dividend),
+            yearlyInvestment: savedYearly
         };
-        console.log(`Yearly growth: ${thisYearsGrowth}
-        dividends: ${dividend}
-        `);
+        console.log(year);
         yearlyGainsList.push(year)
     }
     return yearlyGainsList;
