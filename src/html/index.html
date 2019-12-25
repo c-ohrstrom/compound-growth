@@ -1,51 +1,78 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Compound Growth</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- <link rel="stylesheet" type="text/css" media="screen" href="../main.css" /> -->
+		<style type="text/css">
+			.wrapper {
+				width: 100vw;
+				display: flex;
+				flex-flow: column nowrap;
+				align-content: center;
+				justify-content: center;
+				align-items: center;
+			}
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Compound Growth</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="../main.css" /> -->
-    <style type="text/css">
-        .wrapper {
-            width: 100vw;
-            display: flex;
-            flex-flow: column nowrap;
-            align-content: center;
-            justify-content: center;
-        }
-    </style>
-</head>
+			.wrapper section {
+				margin: 1em;
+				padding: 1em;
+			}
 
-<body>
-    <main class="wrapper">
-        <section>
-            <div>
-                <input type="number" name="starting-capital" id="starting-capital">
-                <input type="number" name="monthly-saving" id="monthly-saving">
-            </div>
-            <div>
-                <input type="number" name="dividend-rate" id="dividend-rate">
-                <label for="years-for-growth">Years</label>
-                <input type="number" name="years-for-growth" id="years-for-growth" value="5">
-                <button id="calculate-compound">Calculate</button>
-            </div>
-        </section>
-        <section>
-            <table id="compound-result">
-                <thead>
-                    <th>Year</th>
-                    <th>Growth</th>
-                    <th>Dividend/Passive income</th>
-                    <th>Capital</th>
-                    <th>Saved that year</th>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </section>
-    </main>
-    <script src="../js/index.js" defer></script>
-</body>
+			#section-input {
+				display: flex;
+				flex-flow: column nowrap;
+			}
 
+			#section-input > div {
+				margin: 0.75em;
+				padding: 0.5em;
+			}
+
+			#section-input label::after {
+				content: ":";
+			}
+		</style>
+	</head>
+
+	<body>
+		<main class="wrapper">
+			<section id="section-input">
+				<div>
+					<label for="starting-capital">Starting Capital</label>
+					<input type="number" name="starting-capital" id="starting-capital" value="10000" />
+					<label for="monthly-saving">Monthly savings</label>
+					<input type="number" name="monthly-saving" id="monthly-saving" value="100" />
+					<label for="years-for-growth">Years</label>
+					<input type="number" name="years-for-growth" id="years-for-growth" value="5" />
+				</div>
+				<div>
+					<label for="dividend-rate">Dividend rate</label>
+					<output name="divident-rate-output" id="dividend-rate-output">3 %</output>
+					<input type="range" name="dividend-rate" id="dividend-rate-input" min="0" max="9" value="3" />
+					<label for="growth-rate">Growth rate</label>
+					<output name="growth-rate-output" id="growth-rate-output">7 %</output>
+					<input type="range" name="growth-rate" id="growth-rate-input" min="0" max="15" value="7" />
+				</div>
+				<div>
+					<button id="calculate-compound">Calculate</button>
+				</div>
+			</section>
+			<section>
+				<table id="compound-result">
+					<thead>
+						<th>Year</th>
+						<th>Growth</th>
+						<th>Dividend/Passive income</th>
+						<th>Capital</th>
+						<th>Saved that year</th>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</section>
+		</main>
+		<script src="../js/index.js" defer></script>
+	</body>
 </html>
