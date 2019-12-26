@@ -4,5 +4,7 @@
     "editor.formatOnSave": true,
     "prettier.requireConfig": true,
     "prettier.prettierPath": "./node_modules/prettier",
-    "prettier.printWidth": 120
+    "prettier.printWidth": 250,
+    "prettier.configPath": "./.prettierrc",
+    "prettier.proseWrap": "never"
 }
