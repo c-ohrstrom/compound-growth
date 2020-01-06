@@ -1,0 +1,66 @@
+input[type="number"] {
+    height: 2em;
+    padding: 0.25em 0.75em;
+    margin-right: 0.75em;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 7px -3px black;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+#button_calculateCompound {
+    border: none;
+    border-radius: 25px;
+    width: 10em;
+    height: 2.5em;
+    background-color: darkcyan;
+    color: white;
+}
+
+#button_calculateCompound:hover {
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.wrapper {
+    width: 100vw;
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper section {
+    margin: 1em;
+    padding: 1em;
+}
+
+#section-input {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px -10px black;
+}
+
+#section-input > div {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0.75em;
+    padding: 0.5em;
+}
+
+section label {
+    margin: 0.25em;
+}
+
+#section-input label::after {
+    content: ":";
+}

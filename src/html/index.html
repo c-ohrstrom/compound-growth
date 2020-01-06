@@ -6,47 +6,15 @@
         <title>Compound Growth</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- <link rel="stylesheet" type="text/css" media="screen" href="../main.css" /> -->
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
         <style type="text/css">
-            #button_calculateCompound {
-                border: none;
-                border-radius: 25px;
-                width: 10em;
-                height: 2.5em;
-                background-color: darkcyan;
-                color: white;
+            * {
+                box-sizing: border-box;
+                font-family:Helvetica;
             }
 
-            #button_calculateCompound:hover {
-                cursor: pointer;
-                border: 1px solid black;
-            }
-
-            .wrapper {
-                width: 100vw;
-                display: flex;
-                flex-flow: column nowrap;
-                align-content: center;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .wrapper section {
-                margin: 1em;
-                padding: 1em;
-            }
-
-            #section-input {
-                display: flex;
-                flex-flow: column nowrap;
-            }
-
-            #section-input > div {
-                margin: 0.75em;
-                padding: 0.5em;
-            }
-
-            #section-input label::after {
-                content: ":";
+            body {
+                background-color: #e6e7e9;
             }
         </style>
     </head>
@@ -136,6 +104,6 @@
                 </table>
             </section>
         </main>
-        <script src="../js/index.js" defer></script>
+        <script type="module" src="../js/index.js" defer></script>
     </body>
 </html>
