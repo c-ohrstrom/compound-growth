@@ -36,6 +36,27 @@ dividendRateInput.addEventListener("change", () => {
         dividendRateInput.value + " %";
 });
 
+const tabs = document.querySelectorAll(".tab");
+
+window.onload = () => {
+    tabs.forEach(item => {
+        item.addEventListener("click", item => {
+            ToggleTab(item.currentTarget);
+        });
+    });
+};
+
+const ToggleTab = obj => {
+    let tabs = document.querySelectorAll(".table-compound");
+    tabs.forEach(tab => {
+        tab.style.display = "none";
+    });
+    let tabToShow = document.querySelector(
+        "#" + obj.getAttribute("data-target-id")
+    );
+    tabToShow.style.display = "block";
+};
+
 const PrintCompound = (element, result) => {
     let tableBody = "";
     result.forEach(item => {
