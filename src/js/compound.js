@@ -1,5 +1,6 @@
-export default CalculateCompoundGrowth = opts => {
-    console.log(opts);
+"use strict";
+
+const CalculateCompoundGrowth = opts => {
     let yearlyGainsList = [];
     let capital = opts.startCapital;
     for (let i = 1; i <= opts.yearsForCompound; i++) {
@@ -26,7 +27,6 @@ export default CalculateCompoundGrowth = opts => {
             yearlyInvestment: savedYearly,
         };
 
-        console.log(year);
         yearlyGainsList.push(year);
     }
     return yearlyGainsList;
@@ -39,3 +39,5 @@ const YearsGrowth = (capital, yearlySavings, growth) => {
 const GetDividend = (capital, dividendRate) => {
     return capital * dividendRate;
 };
+
+export default CalculateCompoundGrowth;

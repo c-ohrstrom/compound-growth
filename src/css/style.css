@@ -1,5 +1,27 @@
+.wrapper {
+    width: 100vw;
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper section {
+    width: 50em;
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px -10px black;
+    margin: 1em;
+    padding: 1em;
+}
+
 input[type="number"] {
     height: 2em;
+    width: 7em;
     padding: 0.25em 0.75em;
     margin-right: 0.75em;
     border: none;
@@ -27,20 +49,6 @@ input[type="number"]::-webkit-inner-spin-button {
     border: 1px solid black;
 }
 
-.wrapper {
-    width: 100vw;
-    display: flex;
-    flex-flow: column nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-}
-
-.wrapper section {
-    margin: 1em;
-    padding: 1em;
-}
-
 #section-input {
     flex: 1;
     display: flex;
@@ -53,6 +61,7 @@ input[type="number"]::-webkit-inner-spin-button {
 #section-input > div {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-evenly;
     margin: 0.75em;
     padding: 0.5em;
 }
@@ -61,6 +70,32 @@ section label {
     margin: 0.25em;
 }
 
-#section-input label::after {
-    content: ":";
+.table-compound {
+    width: 100%;
+    max-height: calc(10 * 1.5em);
+    background-color: white;
+    border-spacing: 0;
+}
+
+.table-compound tbody tr:hover {
+    box-shadow: 0px 0px 7px -4px black;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.table-compound tbody tr::before {
+    display: none;
+    content: "";
+}
+
+.table-compound td {
+    height: 1em;
+    padding: 0.5em 0.25em;
+    margin: 0;
+    border: none;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
 }

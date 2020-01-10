@@ -6,11 +6,11 @@
         <title>Compound Growth</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- <link rel="stylesheet" type="text/css" media="screen" href="../main.css" /> -->
-        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />
         <style type="text/css">
             * {
                 box-sizing: border-box;
-                font-family:Helvetica;
+                font-family: Helvetica;
             }
 
             body {
@@ -23,35 +23,42 @@
         <main class="wrapper">
             <section id="section-input">
                 <div>
-                    <label for="starting-capital">Starting Capital</label>
-                    <input
-                        type="number"
-                        name="starting-capital"
-                        id="starting-capital"
-                        value="10000"
-                    />
-                    <label for="monthly-saving">Monthly savings</label>
-                    <input
-                        type="number"
-                        name="monthly-saving"
-                        id="monthly-saving"
-                        value="100"
-                    />
-                    <label for="years-for-growth">Years</label>
-                    <input
-                        type="number"
-                        name="years-for-growth"
-                        id="years-for-growth"
-                        value="10"
-                    />
+                    <label for="starting-capital">
+                        Starting Capital:
+                        <input
+                            type="number"
+                            name="starting-capital"
+                            id="starting-capital"
+                            value="10000"
+                        />
+                    </label>
+                    <label for="monthly-saving"
+                        >Monthly savings
+                        <input
+                            type="number"
+                            name="monthly-saving"
+                            id="monthly-saving"
+                            value="100"
+                        />
+                    </label>
+                    <label for="years-for-growth"
+                        >Years
+                        <input
+                            type="number"
+                            name="years-for-growth"
+                            id="years-for-growth"
+                            value="10"
+                        />
+                    </label>
                 </div>
                 <div>
                     <label for="dividend-rate">Dividend rate</label>
                     <output
-					>3 %</output
-                        name="divident-rate-output"
+                        name="dividend-rate-output"
                         id="dividend-rate-output"
                     >
+                        3 %
+                    </output>
                     <input
                         type="range"
                         name="dividend-rate"
@@ -61,9 +68,9 @@
                         value="3"
                     />
                     <label for="growth-rate">Growth rate</label>
-                    <output name="growth-rate-output" id="growth-rate-output"
-                        >7 %</output
-                    >
+                    <output name="growth-rate-output" id="growth-rate-output">
+                        7 %
+                    </output>
                     <input
                         type="range"
                         name="growth-rate"
@@ -78,7 +85,11 @@
                 </div>
             </section>
             <section>
-                <table id="compound-result">
+                <div class="tabs">
+                    <button class="tab"></button>
+                    <button class="tab"></button>
+                </div>
+                <table id="compound-result" class="table-compound">
                     <thead>
                         <th>Year</th>
                         <th>Capital</th>
@@ -89,9 +100,11 @@
                     </thead>
                     <tbody></tbody>
                 </table>
-            </section>
-            <section>
-                <table id="compound-result_dividend">
+
+                <table
+                    id="compound-result_dividend"
+                    class="table-compound hidden"
+                >
                     <thead>
                         <th>Year</th>
                         <th>Capital</th>
