@@ -66,9 +66,7 @@ const PrintCompound = (element, result) => {
 				<td>+${NumberWithSpaces(item.yearlyInvestment)} kr</td>
                 <td>+${NumberWithSpaces(item.growth)} kr</td>
                 <td>+${NumberWithSpaces(item.dividend)} kr</td>
-                <td>${NumberWithSpaces(
-                    item.capital + item.growth + item.dividend
-                )} kr</td>
+                <td>${NumberWithSpaces(item.capitalEnd)} kr</td>
                 </tr>`;
         tableBody += tr;
     });
