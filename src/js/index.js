@@ -36,7 +36,7 @@ dividendRateInput.addEventListener("change", () => {
         dividendRateInput.value + " %";
 });
 
-const tabs = document.querySelectorAll(".tab");
+const tabs = document.querySelectorAll(".button-tab");
 
 window.onload = () => {
     tabs.forEach(item => {
@@ -49,12 +49,12 @@ window.onload = () => {
 const ToggleTab = obj => {
     let tabs = document.querySelectorAll(".table-compound");
     tabs.forEach(tab => {
-        tab.style.display = "none";
+        tab.parentElement.classList.add("hidden");
     });
-    let tabToShow = document.querySelector(
+    let tableToShow = document.querySelector(
         "#" + obj.getAttribute("data-target-id")
     );
-    tabToShow.style.display = "block";
+    tableToShow.parentElement.classList.remove("hidden");
 };
 
 const PrintCompound = (element, result) => {
@@ -62,15 +62,21 @@ const PrintCompound = (element, result) => {
     result.forEach(item => {
         let tr = `<tr>
                 <td>${item.year}</td>
-                <td>${item.capital}</td>
-				<td>${item.yearlyInvestment}</td>
-                <td>${item.growth}</td>
-                <td>${item.dividend}</td>
-                <td>${item.capital + item.growth + item.dividend}</td>
+                <td>${NumberWithSpaces(item.capital)} kr</td>
+				<td>+${NumberWithSpaces(item.yearlyInvestment)} kr</td>
+                <td>+${NumberWithSpaces(item.growth)} kr</td>
+                <td>+${NumberWithSpaces(item.dividend)} kr</td>
+                <td>${NumberWithSpaces(
+                    item.capital + item.growth + item.dividend
+                )} kr</td>
                 </tr>`;
         tableBody += tr;
     });
     let table = document.querySelector(element);
     table.innerHTML = "";
     table.innerHTML = tableBody;
+};
+
+const NumberWithSpaces = number => {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 };

@@ -7,16 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- <link rel="stylesheet" type="text/css" media="screen" href="../main.css" /> -->
         <link rel="stylesheet" type="text/css" href="../css/style.css" />
-        <style type="text/css">
-            * {
-                box-sizing: border-box;
-                font-family: Helvetica;
-            }
-
-            body {
-                background-color: #e6e7e9;
-            }
-        </style>
+        <style type="text/css"></style>
     </head>
 
     <body>
@@ -85,43 +76,43 @@
                 </div>
             </section>
             <section>
-                <div class="tabs">
-                    <button class="tab" data-target-id="compound-result">
-                        No reinvest
+                <div class="button-tab-group">
+                    <button class="button-tab" data-target-id="compound-result">
+                        No reinvesting
                     </button>
                     <button
-                        class="tab"
+                        class="button-tab"
                         data-target-id="compound-result_dividend"
                     >
                         Reinvesting
                     </button>
                 </div>
-                <table id="compound-result" class="table-compound">
-                    <thead>
-                        <th>Year</th>
-                        <th>Capital</th>
-                        <th>Yearly saving</th>
-                        <th>Growth</th>
-                        <th>Dividend</th>
-                        <th>Capital end</th>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-
-                <table
-                    id="compound-result_dividend"
-                    class="table-compound hidden"
-                >
-                    <thead>
-                        <th>Year</th>
-                        <th>Capital</th>
-                        <th>Yearly saving</th>
-                        <th>Growth</th>
-                        <th>Dividend</th>
-                        <th>Capital end</th>
-                    </thead>
-                    <tbody></tbody>
-                </table>
+                <div>
+                    <table id="compound-result" class="table-compound">
+                        <thead>
+                            <th>Year</th>
+                            <th>Capital</th>
+                            <th>Yearly saving</th>
+                            <th>Growth</th>
+                            <th>Dividend</th>
+                            <th>Capital end</th>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="hidden">
+                    <table id="compound-result_dividend" class="table-compound">
+                        <thead>
+                            <th>Year</th>
+                            <th>Capital</th>
+                            <th>Yearly saving</th>
+                            <th>Growth</th>
+                            <th>Dividend</th>
+                            <th>Capital end</th>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
             </section>
         </main>
         <script type="module" src="../js/index.js" defer></script>

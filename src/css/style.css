@@ -1,3 +1,12 @@
+* {
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    background-color: #e6e7e9;
+}
+
 .wrapper {
     width: 100vw;
     display: flex;
@@ -46,7 +55,8 @@ input[type="number"]::-webkit-inner-spin-button {
 
 #button_calculateCompound:hover {
     cursor: pointer;
-    border: 1px solid black;
+    /* border: 1px solid rgba(206, 193, 193, 0.548); */
+    transform: scale(1.1);
 }
 
 #section-input {
@@ -68,6 +78,20 @@ input[type="number"]::-webkit-inner-spin-button {
 
 section label {
     margin: 0.25em;
+}
+
+.button-tab {
+    width: 8em;
+    height: 3em;
+    margin: 0.5em;
+    border: none;
+    background-color: #eee;
+    color: black;
+}
+
+.button-tab:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .table-compound {
