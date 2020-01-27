@@ -47,14 +47,19 @@ window.onload = () => {
 };
 
 const ToggleTab = obj => {
-    let tabs = document.querySelectorAll(".table-compound");
-    tabs.forEach(tab => {
-        tab.parentElement.classList.add("hidden");
+    let tables = document.querySelectorAll(".table-compound");
+    tables.forEach(table => {
+        table.parentElement.classList.add("hidden");
     });
     let tableToShow = document.querySelector(
         "#" + obj.getAttribute("data-target-id")
     );
+
     tableToShow.parentElement.classList.remove("hidden");
+    document.querySelectorAll(".button-tab").forEach(button => {
+        button.classList.remove("tab-active");
+    });
+    obj.classList.add("tab-active");
 };
 
 const PrintCompound = (element, result) => {

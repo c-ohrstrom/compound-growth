@@ -80,18 +80,30 @@ section label {
     margin: 0.25em;
 }
 
+.button-tab-group {
+    margin-bottom: 0.5em;
+}
+
 .button-tab {
-    width: 8em;
+    width: 10em;
     height: 3em;
-    margin: 0.5em;
+    margin: 0.25em;
+    padding: 0.75em;
     border: none;
     background-color: #eee;
     color: black;
 }
 
-.button-tab:hover {
+.button-tab:hover,
+.tab-active {
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.02);
+    letter-spacing: 1.5px;
+    text-decoration: underline;
+}
+
+.tab-active {
+    box-shadow: 0 0 10px 2px darkcyan;
 }
 
 .table-compound {
