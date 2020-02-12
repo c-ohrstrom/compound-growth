@@ -44,6 +44,9 @@ window.onload = () => {
             ToggleTab(item.currentTarget);
         });
     });
+    console.log(
+        "Repository URL: https://github.com/c-ohrstrom/compound-growth"
+    );
 };
 
 const ToggleTab = obj => {
