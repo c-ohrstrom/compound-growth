@@ -1,4 +1,6 @@
 # compound-growth
+URL: https://c-ohrstrom.github.io/compound-growth/
+
 Simple web app to calculate investment growth over time depending on dividend rate and market growth.
 
 I wanted to further my knowledge in JS and CSS.
